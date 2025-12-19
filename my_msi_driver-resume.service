@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart MSI MEG CoreLiquid driver after suspend/hibernate
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart my_msi_driver.service
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
