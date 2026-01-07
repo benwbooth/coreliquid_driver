@@ -1,1 +1,4 @@
 src/my_msi_driver
+build/
+.direnv/
+result
