@@ -50,6 +50,9 @@
             pkgs.pkg-config
           ];
 
+          # Keep flake inputs in closure so GC doesn't collect them
+          FLAKE_INPUTS = builtins.concatStringsSep ":" [ "${nixpkgs}" "${flake-utils}" ];
+
           shellHook = ''
             echo "coreliquid_driver development environment"
             echo "Run 'make' to build"
